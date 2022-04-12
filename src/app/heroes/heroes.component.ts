@@ -15,13 +15,8 @@ export class HeroComponent implements OnInit {
     name: 'Windstorm',
   };*/
 
-  getHeroes(): void {
-    // this.heroes = this.heroService.getHeroes();
-    this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
-  }
-
   heroes: Hero[] = []; // heroes = HEROES;
-  selectedHero?: Hero;
+  // selectedHero?: Hero;
 
   constructor(
     private heroService: HeroService,
@@ -32,8 +27,15 @@ export class HeroComponent implements OnInit {
     this.getHeroes();
   }
 
+  getHeroes(): void {
+    // this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
+  }
+
+  /*
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
     this.messageService.add(`HeroesComponent: Selected hero id = ${hero.id}`);
   }
+  */
 }
